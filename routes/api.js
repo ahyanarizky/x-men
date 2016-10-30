@@ -85,8 +85,28 @@ router.delete('/skills/:id', function(req, res, next) {
 })
 
 router.get('/mutantskill', function(req, res, next) {
-    mutanSkill.findAll({}).then((data) => {
-        res.json(data)
+    mutan.findAll({
+        include: [
+            {
+                model: skill,
+                through: {
+                    // atttributes: ['power'],
+                    where: {
+                        MutantId: 10
+                    }
+                }
+            }
+        ]
+    }).then((data) => {
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].dataValues.id == 10) {
+                console.log(data[i].dataValues);
+                res.json(data[i].dataValues)
+            } else {
+                res.json({message: 'ID not Found !'})
+            }
+        }
+        // res.json(data)
     })
 })
 
