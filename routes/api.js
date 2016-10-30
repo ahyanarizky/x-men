@@ -92,21 +92,17 @@ router.get('/mutantskill', function(req, res, next) {
                 through: {
                     // atttributes: ['power'],
                     where: {
-                        MutantId: 10
+                        MutantId: 12
                     }
                 }
             }
         ]
     }).then((data) => {
         for (var i = 0; i < data.length; i++) {
-            if (data[i].dataValues.id == 10) {
-                console.log(data[i].dataValues);
+            if (data[i].dataValues.id == 12) {
                 res.json(data[i].dataValues)
-            } else {
-                res.json({message: 'ID not Found !'})
-            }
+            } else {}
         }
-        // res.json(data)
     })
 })
 
