@@ -1,9 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models')
-var mutan = models.Mutant
-var skill = models.Skill
-var mutanSkill = models.MutantSkill
 var controller = require('../controller/controller')
 /* GET users listing. */
 //read all mutant

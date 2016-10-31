@@ -1,4 +1,8 @@
 'use strict'
+var models = require('../models')
+var mutan = models.Mutant
+var skill = models.Skill
+var mutanSkill = models.MutantSkill
 
 let showMutantSkills = function(MutantId) {}
 
@@ -25,6 +29,7 @@ module.exports = {
         })
     },
     eliminateMutant: function(req, res, next) {
+        console.log(req.body);
         mutan.destroy({
             where: {
                 id: req.params.id
@@ -44,7 +49,7 @@ module.exports = {
         })
     },
     developNewSkill: function(req, res, next) {
-        skill.create({power: req.body.power, level: req.body.level}).then((data) => {
+        skill.create({power: req.body.power}).then((data) => {
             res.json(data)
         })
     },

@@ -1,5 +1,51 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container.text-center
+    .jumbotron
+      h1= title
+  .container
+    h2 Mutant List
+    p
+      | This table is populated using ajax
+  .jumbotron
+    #userList
+      .container
+        table.table.table-striped
+            thead
+                th Mutant Name
+            tbody
+  .jumbotron
+    #userSkills
+      .container
+        h2 Skill List
+        p
+          | This table is populated using ajax
+        table.table.table-striped
+            thead
+                th Skill List
+            tbody
+      // /USER LIST
+      // ADD USER
+  .jumbotron
+    .container
+      h2 Add Mutant
+      #addUser
+        fieldset.form-group
+          .form-group
+            input#inputMutant.form-control(type='text', placeholder='Mutant Name', name='name')
+          .form-group
+            button.btn.btn-primary#btnAddUser Add Mutant
+  .jumbotron
+    .container
+      h2 Add Skill
+      #addSkill
+        fieldset.form-group
+          .form-group
+            input#inputSkill.form-control(type='text', placeholder='Skill Name', name='name')
+          .form-group
+            button.btn.btn-primary#btnAddSkill Add Skill
+
+      // /ADD USER
+
+    // /WRAPPER
