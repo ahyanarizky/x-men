@@ -13,6 +13,7 @@ router.post('/skills', controller.developNewSkill);
 router.put('/skills/:id', controller.reconstructSkill)
 router.delete('/skills/:id', controller.eliminateSkill)
 
+router.get('/mutantskill', controller.allMutantsPowers)
 router.get('/mutantskill/:id', controller.showMutantSkills)
 router.post('/mutantskill', controller.trainMutant)
 
